@@ -1,7 +1,7 @@
 #include <AccelStepper.h> //accelstepper library
 AccelStepper Rstepper(1, 2, 38); //pulses Digital 2 (CLK), direction Digital 38 
-AccelStepper S1stepper(1, 10, 11); //pulses Digital 10 (CLK), direction Digital 11 
-AccelStepper S2stepper(1, 10, 11); //pulses Digital 10 (CLK), direction Digital 11 
+AccelStepper S1stepper(1, 3, 40); //pulses Digital 10 (CLK), direction Digital 11 
+AccelStepper S2stepper(1, 4, 42); //pulses Digital 10 (CLK), direction Digital 11 
 
 //Pins
 const byte Analog_R_pin = A1; //r - 'rotation'-axis readings
@@ -38,15 +38,18 @@ void setup()
   //----------------------------------------------------------------------------  
   //Stepper parameters
   //setting up some default values for maximum speed and maximum acceleration
-  Rstepper.setMaxSpeed(120); //SPEED = Steps / second  
+  Rstepper.setMaxSpeed(200); //SPEED = Steps / second  
   Rstepper.setAcceleration(100); //ACCELERATION = Steps /(second)^2    
-  Rstepper.setSpeed(100);
+  Rstepper.setSpeed(50);
   delay(500);
   //----------------------------------------------------------------------------
-  //stepper2.setMaxSpeed(5000); //SPEED = Steps / second  
-  //stepper2.setAcceleration(1000); //ACCELERATION = Steps /(second)^2    
-  //stepper2.setSpeed(500);
+  S1stepper.setMaxSpeed(200); //SPEED = Steps / second  
+  S1stepper.setAcceleration(10); //ACCELERATION = Steps /(second)^2    
+  S1stepper.setSpeed(10);
   delay(500);  
+  S2stepper.setMaxSpeed(200); //SPEED = Steps / second  
+  S2stepper.setAcceleration(10); //ACCELERATION = Steps /(second)^2    
+  S2stepper.setSpeed(10);
 
 }
 
@@ -56,6 +59,7 @@ void loop()
   if (millis() - prevMillis >= interval) {
    ReadAnalog();
   }   
+  
   Rstepper.runSpeed(); //step the motor (this will step the motor by 1 step at each loop indefinitely)
   S1stepper.runSpeed();
   S2stepper.runSpeed();
@@ -82,30 +86,34 @@ void ReadAnalog()
   // Analog_R = analogRead(Analog_R_pin); 
   //Serial.println(Analog_X);  
 
+  Rstepper.setSpeed(-80); 
+  S1stepper.setSpeed(1);
+  S2stepper.setSpeed(-1);
+
   //if the value is 25 "value away" from the average (midpoint), we allow the update of the speed
   //This is a sort of a filter for the inaccuracy of the reading
-  if(abs(Analog_R-Analog_R_AVG)>25) 
-  {
-    int setSpeed = 7*(Analog_R-Analog_R_AVG);
-    Rstepper.setSpeed(setSpeed);  
-    //Serial.println(setSpeed);     
-  }
-  else
-  {
-    Rstepper.setSpeed(0);
-  }
+  // if(abs(Analog_R-Analog_R_AVG)>25) 
+  // {
+  //   int setSpeed = 7*(Analog_R-Analog_R_AVG);
+  //   Rstepper.setSpeed(setSpeed);  
+  //   //Serial.println(setSpeed);     
+  // }
+  // else
+  // {
+  //   Rstepper.setSpeed(0);
+  // }
   
   //Here we will flip the direction of 1 of the motors.  
-  if(abs(Analog_S-Analog_S_AVG)>25) 
-  {
-    S1stepper.setSpeed(5*(Analog_S-Analog_S_AVG));  
-    S2stepper.setSpeed(-5*(Analog_S-Analog_S_AVG));  
-  }
-  else
-  {
-    S1stepper.setSpeed(0);
-    S2stepper.setSpeed(0);
-  }
+  // if(abs(Analog_S-Analog_S_AVG)>25) 
+  // {
+  //   S1stepper.setSpeed(5*(Analog_S-Analog_S_AVG));  
+  //   S2stepper.setSpeed(-5*(Analog_S-Analog_S_AVG));  
+  // }
+  // else
+  // {
+  //   S1stepper.setSpeed(0);
+  //   S2stepper.setSpeed(0);
+  // }
 }
 
 void InitialValues()

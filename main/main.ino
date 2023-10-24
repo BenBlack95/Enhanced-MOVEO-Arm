@@ -1,7 +1,10 @@
 #include <AccelStepper.h> //accelstepper library
+#include <Sharer.h>
+#include <ContinuousStepper.h>
+
 AccelStepper Rstepper(1, 2, 38); //pulses Digital 2 (CLK), direction Digital 38 
-AccelStepper S1stepper(1, 3, 40); //pulses Digital 10 (CLK), direction Digital 11 
-AccelStepper S2stepper(1, 4, 42); //pulses Digital 10 (CLK), direction Digital 11 
+AccelStepper S1stepper(1, 3, 40); //pulses Digital 3 (CLK), direction Digital 40 
+AccelStepper S2stepper(1, 4, 42); //pulses Digital 4 (CLK), direction Digital 42 
 
 //Pins
 const byte Analog_R_pin = A1; //r - 'rotation'-axis readings
@@ -19,14 +22,20 @@ int Analog_S_AVG = 0; //y-axis value average
 // int Analog_R_AVG = 0; //r-axis value average
 
 //int Analog_R_Value = 0; //this is used for the PWM value
-const long interval = 500;  // ms
+const long interval = 100;  // ms
 unsigned long prevMillis = 0;  // ms 
+
+float leftXInput = 1;
+float leftYInput = 1;
+
+ContinuousStepper<StepperDriver> stepper;
 
 void setup()
 {
   // Schedule sampling interval
   //SERIAL
-  Serial.begin(9600);
+  Serial.begin(115200);
+  //Serial2.begin(115200);
   //----------------------------------------------------------------------------    
   //PINS
   pinMode(Analog_R_pin, INPUT);
@@ -34,48 +43,49 @@ void setup()
   // pinMode(Analog_R_pin, INPUT); 
   // pinMode(LED_pin, OUTPUT);
   //----------------------------------------------------------------------------  
-  InitialValues(); //averaging the values of the 3 analog pins (values from potmeters)
+  //InitialValues(); //averaging the values of the 3 analog pins (values from potmeters)
   //----------------------------------------------------------------------------  
   //Stepper parameters
   //setting up some default values for maximum speed and maximum acceleration
-  Rstepper.setMaxSpeed(200); //SPEED = Steps / second  
-  Rstepper.setAcceleration(100); //ACCELERATION = Steps /(second)^2    
-  Rstepper.setSpeed(50);
-  delay(500);
+  // Rstepper.setMaxSpeed(400); //SPEED = Steps / second  
+  // Rstepper.setAcceleration(4); //ACCELERATION = Steps /(second)^2    
+  // Rstepper.setSpeed(0);
+  // delay(500);
   //----------------------------------------------------------------------------
   S1stepper.setMaxSpeed(200); //SPEED = Steps / second  
-  S1stepper.setAcceleration(10); //ACCELERATION = Steps /(second)^2    
-  S1stepper.setSpeed(10);
-  delay(500);  
+  S1stepper.setAcceleration(2); //ACCELERATION = Steps /(second)^2    
+  S1stepper.setSpeed(200);
+
+  S1stepper.moveTo(2000);
+  //delay(500);  
   S2stepper.setMaxSpeed(200); //SPEED = Steps / second  
   S2stepper.setAcceleration(10); //ACCELERATION = Steps /(second)^2    
-  S2stepper.setSpeed(10);
+  S2stepper.setSpeed(0);
 
+  stepper.begin(/*step=*/2, /*dir=*/38);
+
+  //stepper.spin(100);
+
+  Sharer_ShareVariable(float, leftXInput);
+  Sharer_ShareVariable(float, leftYInput);
 }
 
 void loop()
 {
+  Sharer.run();
   //commented out for testing
   if (millis() - prevMillis >= interval) {
-   ReadAnalog();
+    //Rstepper.setSpeed(150);
+    stepper.spin((leftXInput - 1) * -80);
+    S1stepper.setSpeed((leftYInput - 1) * -100);
+    S2stepper.setSpeed((leftYInput - 1) * 100);
+    //Serial2.println("testing...");
   }   
   
-  Rstepper.runSpeed(); //step the motor (this will step the motor by 1 step at each loop indefinitely)
-  S1stepper.runSpeed();
-  S2stepper.runSpeed();
-
-  // Serial.println("clockwise");
-  // stepper.setSpeed(100);
-  // stepper.move(100);
-  // stepper.runToPosition();
-  // delay(500);
-
-  // // step one revolution in the other direction:
-  // Serial.println("counterclockwise");
-  // stepper.move(-100);
-  // stepper.
-  // stepper.runToPosition();
-  // delay(500);
+  // Rstepper.runSpeed(); //step the motor (this will step the motor by 1 step at each loop indefinitely)
+  // S1stepper.runSpeed();
+  // S2stepper.runSpeed();
+  stepper.loop();
 }
 
 void ReadAnalog()

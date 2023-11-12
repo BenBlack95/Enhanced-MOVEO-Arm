@@ -1,0 +1,6 @@
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\BinariesX64\Debug\XInputDotNetPure.dll
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\BinariesX64\Debug\XInputDotNetPure.pdb
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.csproj.AssemblyReference.cache
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.csproj.CoreCompileInputs.cache
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.dll
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.pdb

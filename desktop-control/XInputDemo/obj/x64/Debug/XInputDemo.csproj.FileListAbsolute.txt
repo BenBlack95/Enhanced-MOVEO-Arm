@@ -1,0 +1,9 @@
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\BinariesX64\Debug\XInputDemo.exe.config
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\BinariesX64\Debug\XInputDemo.exe
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\BinariesX64\Debug\XInputDemo.pdb
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDemo\obj\x64\Debug\XInputDemo.csproj.AssemblyReference.cache
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDemo\obj\x64\Debug\XInputDemo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDemo\obj\x64\Debug\XInputDemo.csproj.CoreCompileInputs.cache
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDemo\obj\x64\Debug\XInputDemo.csproj.CopyComplete
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDemo\obj\x64\Debug\XInputDemo.exe
+C:\Users\Ben\Downloads\XInputDotNet-2017.04-2\XInputDotNet-2017.04-2\XInputDemo\obj\x64\Debug\XInputDemo.pdb

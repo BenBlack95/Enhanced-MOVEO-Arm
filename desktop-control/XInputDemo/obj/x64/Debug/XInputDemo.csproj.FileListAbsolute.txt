@@ -16,3 +16,11 @@ C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDemo\obj\x64\Debu
 C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.csproj.CopyComplete
 C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.exe
 C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.pdb
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\BinariesX64\Debug\XInputDemo.exe.config
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\BinariesX64\Debug\XInputDemo.exe
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\BinariesX64\Debug\XInputDemo.pdb
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.csproj.AssemblyReference.cache
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.csproj.CoreCompileInputs.cache
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.csproj.CopyComplete
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.exe
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDemo\obj\x64\Debug\XInputDemo.pdb

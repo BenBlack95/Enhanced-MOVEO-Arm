@@ -10,3 +10,9 @@ C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDotNetPure\obj\x6
 C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.csproj.CoreCompileInputs.cache
 C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.dll
 C:\Users\Ben\Documents\!Moveo Robot\repo\desktop-control\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.pdb
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\BinariesX64\Debug\XInputDotNetPure.dll
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\BinariesX64\Debug\XInputDotNetPure.pdb
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.csproj.AssemblyReference.cache
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.csproj.CoreCompileInputs.cache
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.dll
+C:\Users\cody\source\repos\Enhanced-MOVEO-Arm\desktop-control\XInputDotNetPure\obj\x64\Debug\XInputDotNetPure.pdb

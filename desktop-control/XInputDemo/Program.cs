@@ -10,7 +10,7 @@ namespace XInputDemo
         static void Main(string[] args)
         {
             //establish Arduino connection
-            var connection = new SharerConnection("COM7", 115200);
+            var connection = new SharerConnection("COM4", 115200);
             connection.Connect();
 
             
